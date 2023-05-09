@@ -11,7 +11,7 @@ const form = document.querySelector('.overlay-form')
 const textWhite = "White to move";
 const textBlack = "Black to move";
 
-const getRook = (inputCell) => {
+const getRook = (inputCell) => {//Find the right rook to castle
   const rookCell = document.querySelector(`[data-cell="${inputCell}"]`);
   const rook = rookCell.querySelector("#rook");
   return rook;
@@ -49,7 +49,7 @@ blocks.forEach((block) => {
     } else if (dragged.className === "white-piece" && !whiteToMove) {
       return;
     }
-    if (castling) {
+    if (castling) {//getting and appending to the right castle square
       switch (cell) {
         case "c1":
           document.querySelector('[data-cell="d1"]').appendChild(getRook("a1"));
@@ -68,7 +68,7 @@ blocks.forEach((block) => {
       notValid = true
       return;
     } else notValid = false
-    if (blockPiece) {
+    if (blockPiece) {//Checking to see if the square has a child i.e a target piece 
       blockPiece.draggable = false;
       let area = blockPiece.className.substring(
         0,
@@ -76,6 +76,7 @@ blocks.forEach((block) => {
       );
       let areaCells = captureArea[area];
       let cells = areaCells.querySelectorAll(".cell");
+      //-------------------------------------------Sends the captured piece to the appropriate capture area below-------------------------------------------------
       if (area === "white") {
         blockPiece.className = "captured";
         for (let i = countA - 1; i < countA; i++) {
@@ -163,7 +164,7 @@ blocks.forEach((block) => {
   });
 });
 
-const rotateHandler = (e) => {
+const rotateHandler = (e) => {//-------------------------------------Rotate handler
   rotateDegrees === 0 ? (rotateDegrees = 180) : (rotateDegrees = 0);
   chessBoard.style.transform = `rotate(${rotateDegrees}deg)`;
   for (const block of blocks) {
@@ -171,7 +172,7 @@ const rotateHandler = (e) => {
   }
 };
 
-const autoRotateHandler = (e) => {
+const autoRotateHandler = (e) => {//-----------------------------------Auto handler
   if (autoRotate.textContent === "OFF") {
     rotateButton.disabled = true;
     autoRotate.textContent = "ON";
@@ -183,7 +184,7 @@ const autoRotateHandler = (e) => {
   }
 };
 
-const promotePieceHandler = (e) =>{
+const promotePieceHandler = (e) =>{//-----------------------------------Piece promotion handler
     e.preventDefault()
     const formData = new FormData(e.target)
     const pieceData = Object.fromEntries(formData)

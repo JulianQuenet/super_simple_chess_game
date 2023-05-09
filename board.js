@@ -71,7 +71,7 @@ export const chessPieces = {
 const letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 8; i++) {//Chess board creation
   for (let j = 0; j < 8; j++) {
     const block = document.createElement("div");
     block.classList.add("block");
@@ -86,7 +86,7 @@ for (let i = 0; i < 8; i++) {
   }
 }
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 8; i++) {//Adding the images in the right place
   for (let j = 0; j < 8; j++) {
     const cell = letters[j] + numbers[7 - i];
     const block = document.querySelector(`[data-cell="${cell}"]`);
@@ -119,6 +119,7 @@ const createCaptureCells = (input) => {
   }
 };
 
+//adding cells in captured area to house the captured pieces
 createCaptureCells(captureArea.black);
 createCaptureCells(captureArea.white);
 
@@ -126,7 +127,7 @@ createCaptureCells(captureArea.white);
 
 const promotionPieces = ["queen","rook","bishop","knight"]
 
-const createPiecesOption = () => {
+const createPiecesOption = () => {//Adding in options to the select element
     const fragment = document.createDocumentFragment();
   
     for (const piece of promotionPieces) {
