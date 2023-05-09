@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>33-C</title>
+    <script src="./scripts.js" defer type="module"></script>
+    <script src="./board.js" defer type="module"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="move-order">
+    <img src="./images/pawn-white.png" alt="pawn-piece" class="player-icon">
+    <h2 class="player-move">White to move</h2>
+    <button class="rotate">Rotate board</button>
+    <p>Auto-rotate:<button class="auto-rotate">OFF</button></p>
+  </div>
+    <section class="game-container">
+    <div class="chess-board-container">
+      <div class="chess-board"></div>
+    </div>
+    <div class="display">
+        <div class="black-captures"><h2>Captures:</h2>
+            <div class="capture-area-black"></div>
+        </div>
+    <button class="reset-button" data-reset-button>Reset Board</button>
+    <div class="white-captures">
+        <h2>Captures:</h2>
+        <div class="capture-area-white"></div>
+    </div>
+</div>
+</section>
+<dialog class="overlay overlay-hidden">
+  <h2>Select piece</h2>
+  <form class="overlay-form">
+    <select class="input-select"
+    name="piece"></select>
+    <button class="form-button" type="submit">Make choice</button>
+  </form>
+</dialog>
+  </body>
+</html>

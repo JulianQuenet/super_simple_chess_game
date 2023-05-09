@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 15, 25);
+}
+
+.player-move{
+  color: rgb(226, 218, 218);
+}
+
+.move-order{
+  height: 200px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(124, 124, 124);
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+
+.rotate{
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Lucida Sans Unicode';
+  background-color: rgb(124, 124, 124);
+  cursor: pointer;
+  border: 0;
+}
+
+.rotate:hover{
+  background-color: blanchedalmond;
+  transition: 0.1s;
+  transform:scale(1.03);
+}
+
+.rotate:disabled{
+  cursor: not-allowed;
+}
+
+.rotate:disabled:hover{
+  background-color: rgb(124, 124, 124);
+  transform: scale(1);
+}
+
+.auto-rotate{
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Lucida Sans Unicode';
+  background-color: rgb(124, 124, 124);;
+  cursor: pointer;
+  border: 0;
+}
+
+.auto-rotate:hover{
+  background-color: blanchedalmond;
+  transition: 0.1s;
+  transform:scale(1.03);
+}
+
+
+.game-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+}
+.chess-board-container{
+    padding: 10px;
+    border: solid #b58863 1px ;
+    background-color: #774f2f;
+    border-radius: 10px;
+}
+
+
+.chess-board {
+    padding: 5px;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+  }
+  
+  .block {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .white {
+    background-color: #f0d9b5;
+  }
+  
+  .black {
+    background-color: #b58863;
+  }
+  
+  .reset-button{
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans Unicode';
+    background-color: grey;
+    cursor: pointer;
+  }
+
+  .reset-button:hover{
+    background-color: blanchedalmond;
+    transition: 0.1s;
+    transform:scale(1.03);
+  }
+
+
+  .display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.display h2{
+    color: bisque;
+}
+
+.capture-area-black{
+  padding: 2px;
+  width: 400px;
+  height: 100px;
+  background-color: rgb(113, 113, 113);
+  border-radius: 10px;
+  opacity: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.capture-area-white{
+    padding: 2px;
+    width: 400px;
+    height: 100px;
+    background-color: rgb(181, 178, 178);
+    border-radius: 10px;
+    opacity: 50%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.cell{
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
+
+.overlay{
+  width: 10%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+  0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  border-width: 0;
+}
+
+.overlay h2{
+  color: darkgray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.overlay-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button{
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border:none;
+  cursor:pointer;
+}
+
+.form-button:hover{
+  transform: scale(1.012);
+  transition: 0.05s;
+}
+
+.overlay-hidden{
+  display:none;
+}
