@@ -146,6 +146,13 @@ blocks.forEach((block) => {
       overlay.classList.remove('overlay-hidden')
       appendBlock = block
     }
+    if (auto) {
+      rotateDegrees === 0 ? (rotateDegrees = 180) : (rotateDegrees = 0);
+      chessBoard.style.transform = `rotate(${rotateDegrees}deg)`;
+      for (const block of blocks) {
+        block.style.transform = `rotate(${rotateDegrees}deg)`;
+      }
+    }
     whiteToMove
       ? (moveImage.src = chessPieces.black.pawn)
       : (moveImage.src = chessPieces.white.pawn);
@@ -153,14 +160,6 @@ blocks.forEach((block) => {
       ? (moveTitle.textContent = textBlack)
       : (moveTitle.textContent = textWhite);
     whiteToMove ? (whiteToMove = false) : (whiteToMove = true);
-
-    if (auto) {
-      rotateDegrees === 0 ? (rotateDegrees = 180) : (rotateDegrees = 0);
-      chessBoard.style.transform = `rotate(${rotateDegrees}deg)`;
-      for (block of blocks) {
-        block.style.transform = `rotate(${rotateDegrees}deg)`;
-      }
-    }
   });
 });
 
