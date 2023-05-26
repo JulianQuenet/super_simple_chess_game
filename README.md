@@ -2,6 +2,7 @@
 
 Basic chess game I made in my free time from a local repository, unfortunately since I didn't spend too much time on it
 it's unable to perform en passant and detect a multitude of invalid moves or spot checks.
+Github pages link: https://julianquenet.github.io/super_simple_chess_game/
 
 ## Abilities
 
