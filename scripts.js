@@ -142,9 +142,9 @@ blocks.forEach((block) => {
     } else if (dragged.className === "white-piece" && !whiteToMove) {
       return;
     }
-    if(dragged.id === "pawn" && rank===1 || rank===8){
-      overlay.classList.remove('overlay-hidden')
+    if(dragged.id === "pawn" && (rank===1 || rank===8)){
       appendBlock = block
+      overlay.classList.toggle('overlay-hidden')
     }
     if (auto) {
       rotateDegrees === 0 ? (rotateDegrees = 180) : (rotateDegrees = 0);
@@ -194,7 +194,7 @@ const promotePieceHandler = (e) =>{//-----------------------------------Piece pr
     newPiece.src = chessPieces[color][pieceData.piece]
     dragged.remove()
     appendBlock.appendChild(newPiece)
-    overlay.classList.add('overlay-hidden')
+    overlay.classList.toggle('overlay-hidden')
 }
 
 
